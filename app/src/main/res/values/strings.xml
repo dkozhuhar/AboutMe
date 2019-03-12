@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">About Me</string>
-    <string name="name">Dmitrry Kozhukhar</string>
+    <string name="name">Dmitry Kozhukhar</string>
+    <string name="star_image">Star image</string>
+    <string name="bio">The "Extract dimension resource" menu option is not available for this attribute, so you will have to add it to dimens.xml by hand.
+        \n\n
+        If you want to start at this step, you can download this exercise code from: Step.03-Exercise-Add-ScrollView.
+        \n\n
+        You will find plenty of //TODO comments to help you complete this exercise, and if you get stuck, go back and watch the video again.
+        \n\n
+        Once you’re done, you can check your solution against the solution we’ve provided here: Step.03-Solution-Add-ScrollView or, using this git diff.</string>
 </resources>
