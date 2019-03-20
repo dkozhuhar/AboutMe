@@ -7,13 +7,14 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: com.example.android.aboutme.databinding.ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //super.onCreate(savedInstanceState)
-        binding.setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState)
+        val binding: com.example.android.aboutme.databinding.ActivityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         val nickName = findViewById<TextView>(R.id.nickname_text)
         val editNickName = findViewById<TextView>(R.id.editText)
         findViewById<Button>(R.id.done_button).setOnClickListener {
