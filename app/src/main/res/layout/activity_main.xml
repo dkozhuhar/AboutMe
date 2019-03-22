@@ -3,6 +3,12 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="myName"
+                type="com.example.android.aboutme.MyName" />
+
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -12,7 +18,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/name"
+            android:text="@{myName.name}"
             android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

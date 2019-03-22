@@ -14,10 +14,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Instance of MyName data class.
+        val myName = MyName("Aleks Haecky")
         val binding: com.example.android.aboutme.databinding.ActivityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        val nickName = findViewById<TextView>(R.id.nickname_text)
-        val editNickName = findViewById<TextView>(R.id.editText)
-        findViewById<Button>(R.id.done_button).setOnClickListener {
+        val nickName = binding.nicknameText
+        val editNickName = binding.editText
+        binding.myName = myName
+        binding.doneButton.setOnClickListener {
             nickName.text = editNickName.text
             it.visibility = View.GONE
             editNickName.visibility = View.GONE
@@ -28,3 +31,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+data class MyName(var name: String = "", var nickname: String = "")
