@@ -8,6 +8,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.Observable
+import androidx.databinding.ObservableField
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,10 +23,11 @@ class MainActivity : AppCompatActivity() {
         val editNickName = binding.editText
         binding.myName = myName
         binding.doneButton.setOnClickListener {
-            nickName.text = editNickName.text
+            myName.nickname.set(editNickName.text.toString())
             it.visibility = View.GONE
             editNickName.visibility = View.GONE
             nickName.visibility = View.VISIBLE
+            //binding.invalidateAll()
             // Hide the keyboard.
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken, 0)
@@ -32,4 +35,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-data class MyName(var name: String = "", var nickname: String = "")
+data class MyName(var name: String = "", var nickname: ObservableField<String> = ObservableField("1"))

@@ -43,6 +43,7 @@
             android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/editText"
             android:id="@+id/nickname_text"
+            android:text="@{myName.nickname}"
             style="@style/nameStyle"/>
     <Button
             android:text="@string/done"
